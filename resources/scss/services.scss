@@ -1,0 +1,242 @@
+section {
+    &.s-wrapper {
+        max-width: 1300px;
+        width: 100%;
+        margin: 0px auto;
+    }
+
+    // Service and opportunities variables
+    $slate-grey: #454545;
+    $ash-grey: #6f7170;
+    $bg-grey: #f8f8f8;
+    $hr-grey: #d5d4d3;
+    $peach-blue: #f2faff;
+    $s-blue: #008fe5;
+    $s-red: #e22119;
+    $s-violet: #8c40b3;
+    $sky-blue: #47c1e1;
+    $s-orange: #ff6a00;
+    $s-green: #6ac04a;
+
+    p {
+        color: $ash-grey;
+    }
+
+    hr {
+        border: 1px solid $hr-grey;
+        margin: 20px auto;
+    }
+
+    color: $slate-grey;
+
+    @media only screen and (max-width: 768px) {
+        .resp-hide {
+            display: none;
+        }
+    }
+
+    .add-padding {
+        padding: 50px;
+
+        @media only screen and (max-width: 768px) {
+            padding: 0;
+        }
+    }
+
+    .bg-blue {
+        background-color: $s-blue;
+    }
+    .bg-red {
+        background-color: $s-red;
+    }
+    .bg-violet {
+        background-color: $s-violet;
+    }
+    .bg-sblue {
+        background-color: $sky-blue;
+    }
+    .bg-orange {
+        background-color: $s-orange;
+    }
+    .bg-green {
+        background-color: $s-green;
+    }
+
+    & .lnv-services {
+        .hero-banner {
+            position: relative;
+            img {
+                width: 100%;
+                height: 400px;
+            }
+            .mb-img {
+                display: none;
+            }
+            .hero-text {
+                & h1 {
+                    font-size: 56px;
+                    line-height: 60px;
+                    margin: 0;
+                }
+                position: absolute;
+                top: 40%;
+                left: 28%;
+                bottom: 0;
+                text-align: center;
+                color: white;
+            }
+
+            @media only screen and (max-width: 575px) {
+                .mb-img {
+                    display: block;
+                }
+
+                .ds-img {
+                    display: none;
+                }
+
+                .hero-text {
+                    left: unset;
+                    top: 25%;
+                }
+            }
+        }
+
+        .partner-details {
+            background-color: $bg-grey;
+            padding: 50px;
+
+            .details-title {
+                font-size: 32px;
+                line-height: 44px;
+                margin-bottom: 15px;
+            }
+
+            @media only screen and (max-width: 575px) {
+                padding: 35px;
+            }
+        }
+    }
+    form.service-form {
+        label {
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        input {
+            margin-bottom: 20px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            height: 40px;
+            padding: 0 15px;
+            border: 1px solid $hr-grey;
+            cursor: pointer;
+        }
+
+        @media only screen and (max-width: 575px) {
+            select {
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    //Style Accordion
+
+    .accordion {
+        background-image: url("/images/Lenovo-Circle-Half.svg");
+        background-repeat: no-repeat;
+        background-position: left center;
+        margin-top: 20px;
+    }
+
+    button.accordion {
+        width: 100%;
+        min-height: 120px;
+        border: none;
+        outline: none;
+        text-align: left;
+        color: white;
+        font-size: 32px;
+        line-height: 44px;
+        font-weight: 100;
+        padding: 0 20px;
+        cursor: pointer;
+        transition: background-color 0.2s linear;
+
+        &:after {
+            font-family: FontAwesome;
+            content: "\f150";
+            font-family: "fontawesome";
+            font-size: 18px;
+            float: right;
+        }
+
+        &.is-open:after {
+            content: "\f151";
+        }
+
+        // &:hover,
+        // &.is-open {
+        //   background-color: #ddd;
+        // }
+
+        .title-img {
+            max-width: 95px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            font-size: 22px;
+            line-height: 28px;
+        }
+    }
+
+    .accordion-content {
+        border-left: 1px solid whitesmoke;
+        border-right: 1px solid whitesmoke;
+        background-color: $bg-grey;
+        padding: 0 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+
+        & .service-form {
+            padding: 25px 15px;
+
+            label {
+                font-size: 14px;
+                line-height: 24px;
+                margin-bottom: 10px;
+                font-weight: bold;
+                position: relative;
+
+                &::after {
+                    content: url("/images/Info.svg");
+                    width: 16px;
+                    height: 16px;
+                    position: absolute;
+                    right: -20px;
+                    top: 2px;
+                }
+            }
+
+            .s-head-text,
+            .s-description {
+                color: $slate-grey;
+            }
+
+            .s-head-text {
+                font-size: 20px;
+                font-weight: 500;
+            }
+
+            .s-description {
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 26px;
+            }
+        }
+    }
+}

@@ -1,0 +1,194 @@
+section {
+  color: #454545;
+}
+section.s-wrapper {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0px auto;
+}
+section p {
+  color: #6f7170;
+}
+section hr {
+  border: 1px solid #d5d4d3;
+  margin: 20px auto;
+}
+@media only screen and (max-width: 768px) {
+  section .resp-hide {
+    display: none;
+  }
+}
+section .add-padding {
+  padding: 50px;
+}
+@media only screen and (max-width: 768px) {
+  section .add-padding {
+    padding: 0;
+  }
+}
+section .bg-blue {
+  background-color: #008fe5;
+}
+section .bg-red {
+  background-color: #e22119;
+}
+section .bg-violet {
+  background-color: #8c40b3;
+}
+section .bg-sblue {
+  background-color: #47c1e1;
+}
+section .bg-orange {
+  background-color: #ff6a00;
+}
+section .bg-green {
+  background-color: #6ac04a;
+}
+section .lnv-services .hero-banner {
+  position: relative;
+}
+section .lnv-services .hero-banner img {
+  width: 100%;
+  height: 400px;
+}
+section .lnv-services .hero-banner .mb-img {
+  display: none;
+}
+section .lnv-services .hero-banner .hero-text {
+  position: absolute;
+  top: 40%;
+  left: 28%;
+  bottom: 0;
+  text-align: center;
+  color: white;
+}
+section .lnv-services .hero-banner .hero-text h1 {
+  font-size: 56px;
+  line-height: 60px;
+  margin: 0;
+}
+@media only screen and (max-width: 575px) {
+  section .lnv-services .hero-banner .mb-img {
+    display: block;
+  }
+  section .lnv-services .hero-banner .ds-img {
+    display: none;
+  }
+  section .lnv-services .hero-banner .hero-text {
+    left: unset;
+    top: 25%;
+  }
+}
+section .lnv-services .partner-details {
+  background-color: #f8f8f8;
+  padding: 50px;
+}
+section .lnv-services .partner-details .details-title {
+  font-size: 32px;
+  line-height: 44px;
+  margin-bottom: 15px;
+}
+@media only screen and (max-width: 575px) {
+  section .lnv-services .partner-details {
+    padding: 35px;
+  }
+}
+section form.service-form label {
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+section form.service-form input {
+  margin-bottom: 20px;
+}
+section form.service-form input,
+section form.service-form select {
+  width: 100%;
+  height: 40px;
+  padding: 0 15px;
+  border: 1px solid #d5d4d3;
+  cursor: pointer;
+}
+@media only screen and (max-width: 575px) {
+  section form.service-form select {
+    margin-bottom: 15px;
+  }
+}
+section .accordion {
+  background-image: url("/images/Lenovo-Circle-Half.svg");
+  background-repeat: no-repeat;
+  background-position: left center;
+  margin-top: 20px;
+}
+section button.accordion {
+  width: 100%;
+  min-height: 120px;
+  border: none;
+  outline: none;
+  text-align: left;
+  color: white;
+  font-size: 32px;
+  line-height: 44px;
+  font-weight: 100;
+  padding: 0 20px;
+  cursor: pointer;
+  transition: background-color 0.2s linear;
+}
+section button.accordion:after {
+  font-family: FontAwesome;
+  content: "\f150";
+  font-family: "fontawesome";
+  font-size: 18px;
+  float: right;
+}
+section button.accordion.is-open:after {
+  content: "\f151";
+}
+section button.accordion .title-img {
+  max-width: 95px;
+}
+@media only screen and (max-width: 768px) {
+  section button.accordion {
+    font-size: 22px;
+    line-height: 28px;
+  }
+}
+section .accordion-content {
+  border-left: 1px solid whitesmoke;
+  border-right: 1px solid whitesmoke;
+  background-color: #f8f8f8;
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+section .accordion-content .service-form {
+  padding: 25px 15px;
+}
+section .accordion-content .service-form label {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  position: relative;
+}
+section .accordion-content .service-form label::after {
+  content: url("/images/Info.svg");
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: -20px;
+  top: 2px;
+}
+section .accordion-content .service-form .s-head-text,
+section .accordion-content .service-form .s-description {
+  color: #454545;
+}
+section .accordion-content .service-form .s-head-text {
+  font-size: 20px;
+  font-weight: 500;
+}
+section .accordion-content .service-form .s-description {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 26px;
+}
