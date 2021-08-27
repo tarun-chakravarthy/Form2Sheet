@@ -62,16 +62,16 @@
                 <tbody>
                     <tr>
                         <th>EXISTING PARTNER OFFERING</th>
-                        <td>{{ $partnerOffering }}</td>
+                        <td>{{ $partnerOffering1 }}</td>
 
                     </tr>
                     <tr>
                         <th>AUGMENTED PARTNERSHIP WITH LENOVO</th>
-                        <td>{{ $augmentedPartner }}</td>
+                        <td>{{ $augmentedPartner1 }}</td>
                     </tr>
                     <tr>
                         <th>KEEN TO LEARN MORE!</th>
-                        <td>{{ $learnMore }}</td>
+                        <td>{{ $learnMore1 }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -86,16 +86,16 @@
                 <tbody>
                     <tr>
                         <th>EXISTING PARTNER OFFERING</th>
-                        <td>{{ $partnerOffering }}</td>
+                        <td>{{ $partnerOffering2 }}</td>
 
                     </tr>
                     <tr>
                         <th>AUGMENTED PARTNERSHIP WITH LENOVO</th>
-                        <td>{{ $augmentedPartner }}</td>
+                        <td>{{ $augmentedPartner2 }}</td>
                     </tr>
                     <tr>
                         <th>KEEN TO LEARN MORE!</th>
-                        <td>{{ $learnMore }}</td>
+                        <td>{{ $learnMore2 }}</td>
                     </tr>
                 </tbody>
             </table>
