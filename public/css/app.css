@@ -93,15 +93,15 @@ section .lnv-services .partner-details .details-title {
     padding: 35px;
   }
 }
-section form.service-form label {
+section .checklist-forms label {
   margin-bottom: 5px;
   text-transform: uppercase;
 }
-section form.service-form input {
+section .checklist-forms input {
   margin-bottom: 20px;
 }
-section form.service-form input,
-section form.service-form select {
+section .checklist-forms input,
+section .checklist-forms select {
   width: 100%;
   height: 40px;
   padding: 0 15px;
@@ -109,7 +109,7 @@ section form.service-form select {
   cursor: pointer;
 }
 @media only screen and (max-width: 575px) {
-  section form.service-form select {
+  section .checklist-forms select {
     margin-bottom: 15px;
   }
 }
@@ -119,35 +119,44 @@ section .accordion {
   background-position: left center;
   margin-top: 20px;
 }
-section button.accordion {
+section div.accordion {
   width: 100%;
+  display: flex;
+  align-items: center;
   min-height: 120px;
   border: none;
-  outline: none;
   text-align: left;
   color: white;
-  font-size: 32px;
-  line-height: 44px;
-  font-weight: 100;
   padding: 0 20px;
   cursor: pointer;
   transition: background-color 0.2s linear;
+  position: relative;
 }
-section button.accordion:after {
+section div.accordion:after {
   font-family: FontAwesome;
-  content: "\f150";
+  content: url("/images/cheveron-right.svg");
   font-family: "fontawesome";
-  font-size: 18px;
+  max-width: 36px;
+  max-height: 38px;
   float: right;
+  position: absolute;
+  right: 35px;
 }
-section button.accordion.is-open:after {
-  content: "\f151";
+section div.accordion.is-open:after {
+  transform: rotate(90deg);
 }
-section button.accordion .title-img {
+section div.accordion h3 {
+  font-size: 32px;
+  line-height: 44px;
+  font-weight: 100;
+  margin-left: 15px;
+}
+section div.accordion .title-img {
   max-width: 95px;
+  float: left;
 }
 @media only screen and (max-width: 768px) {
-  section button.accordion {
+  section div.accordion {
     font-size: 22px;
     line-height: 28px;
   }
@@ -161,17 +170,17 @@ section .accordion-content {
   overflow: hidden;
   transition: max-height 0.5s ease-in-out;
 }
-section .accordion-content .service-form {
+section .accordion-content .checklist-forms {
   padding: 25px 15px;
 }
-section .accordion-content .service-form label {
+section .accordion-content .checklist-forms label {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 10px;
   font-weight: bold;
   position: relative;
 }
-section .accordion-content .service-form label::after {
+section .accordion-content .checklist-forms label::after {
   content: url("/images/Info.svg");
   width: 16px;
   height: 16px;
@@ -179,15 +188,15 @@ section .accordion-content .service-form label::after {
   right: -20px;
   top: 2px;
 }
-section .accordion-content .service-form .s-head-text,
-section .accordion-content .service-form .s-description {
+section .accordion-content .checklist-forms .s-head-text,
+section .accordion-content .checklist-forms .s-description {
   color: #454545;
 }
-section .accordion-content .service-form .s-head-text {
+section .accordion-content .checklist-forms .s-head-text {
   font-size: 20px;
   font-weight: 500;
 }
-section .accordion-content .service-form .s-description {
+section .accordion-content .checklist-forms .s-description {
   font-size: 16px;
   font-weight: 300;
   line-height: 26px;

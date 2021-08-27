@@ -1840,22 +1840,7 @@ module.exports = {
   \*****************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // const accordionBtns = document.querySelectorAll(".accordion");
-// accordionBtns.forEach((accordion) => {
-//     accordion.onclick = function () {
-//         this.classList.toggle("is-open");
-//         let content = this.nextElementSibling;
-//         console.log(content);
-//         if (content.style.maxHeight) {
-//             // Accordion is active
-//             content.style.maxHeight = null;
-//         } else {
-//             // Accordion is in-active
-//             content.style.maxHeight = content.scrollHeight + "px";
-//             console.log(content.style.maxHeight)
-//         }
-//     }
-// })
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 /***/ }),
 

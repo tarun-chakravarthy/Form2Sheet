@@ -117,7 +117,7 @@ section {
             }
         }
     }
-    form.service-form {
+    .checklist-forms {
         label {
             margin-bottom: 5px;
             text-transform: uppercase;
@@ -152,30 +152,40 @@ section {
         margin-top: 20px;
     }
 
-    button.accordion {
+    div.accordion {
         width: 100%;
+        display: flex;
+        align-items: center;
         min-height: 120px;
         border: none;
-        outline: none;
         text-align: left;
         color: white;
-        font-size: 32px;
-        line-height: 44px;
-        font-weight: 100;
         padding: 0 20px;
         cursor: pointer;
         transition: background-color 0.2s linear;
+        position: relative;
 
         &:after {
             font-family: FontAwesome;
-            content: "\f150";
+            content: url('/images/cheveron-right.svg');
             font-family: "fontawesome";
-            font-size: 18px;
+            max-width: 36px;
+            max-height: 38px;
             float: right;
+            position: absolute;
+            right: 35px;
         }
 
         &.is-open:after {
-            content: "\f151";
+            transform: rotate(90deg);
+        }
+
+
+        h3 {
+            font-size: 32px;
+            line-height: 44px;
+            font-weight: 100;
+            margin-left: 15px;
         }
 
         // &:hover,
@@ -185,6 +195,7 @@ section {
 
         .title-img {
             max-width: 95px;
+            float: left;
         }
 
         @media only screen and (max-width: 768px) {
@@ -202,7 +213,7 @@ section {
         overflow: hidden;
         transition: max-height 0.5s ease-in-out;
 
-        & .service-form {
+        & .checklist-forms {
             padding: 25px 15px;
 
             label {

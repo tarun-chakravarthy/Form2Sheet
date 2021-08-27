@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [PdfController::class, 'index']);
+Route::get('/', function () {
+    return view('form');
+});
+
+Route::post('/', [PdfController::class, 'getData']);
+
 
 // Route::get('/pdf', 'PdfController@index')->name('pdf');
