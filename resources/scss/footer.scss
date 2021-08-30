@@ -1,0 +1,67 @@
+footer {
+    .contact-us {
+        width: 100%;
+        background-color: $footer-blue;
+        text-align: center;
+        padding: 25px;
+        color: #fff;
+        text-transform: uppercase;
+
+        p {
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .contact-copy {
+            font-family: 'Gotham Light';
+            margin-top: 5px;
+        }
+
+        .call-us {
+            font-size: 20px;
+            font-family: 'Gotham Bold';
+        }
+    }
+
+    .footer-content {
+        background-color: $footer-grey;
+        padding: 25px;
+        text-align: left;
+
+        .footer-imgs {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+
+            .p-block {
+
+                margin-left: 10px;
+
+                P {
+                    margin-bottom: 0;
+                    font-size: 14px;
+                }
+
+                .add-strong {
+                    font-family: 'Gotham Medium';
+                }
+            }
+        }
+
+        .footer-text, .copy-right {
+            font-size: 10px;
+            line-height: 16px;
+            color: $text-color;
+        }
+
+        .copy-right {
+            font-family: 'Gotham Medium';
+        }
+    }
+}

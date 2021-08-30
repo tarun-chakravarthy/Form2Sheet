@@ -1,22 +1,55 @@
-section {
-    &.s-wrapper {
-        max-width: 1300px;
-        width: 100%;
-        margin: 0px auto;
+body {
+    max-width: 1300px;
+    width: 100%;
+    margin: 0px auto;
+    font-family: 'Gotham Book';
+
+    h1, h2, h3 {
+        font-family: 'Gotham Medium';
     }
 
-    // Service and opportunities variables
-    $slate-grey: #454545;
-    $ash-grey: #6f7170;
-    $bg-grey: #f8f8f8;
-    $hr-grey: #d5d4d3;
-    $peach-blue: #f2faff;
-    $s-blue: #008fe5;
-    $s-red: #e22119;
-    $s-violet: #8c40b3;
-    $sky-blue: #47c1e1;
-    $s-orange: #ff6a00;
-    $s-green: #6ac04a;
+    p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .btn {
+        font-size: 14px;
+        line-height: 24px;
+        font-family: 'Gotham Light';
+        border-radius: 0;
+    }
+
+    .btn.__lg {
+        min-width: 310px;
+        height: 40px;
+        margin: 0 auto;
+    }
+
+    .__primary {
+        background-color: $footer-blue;
+        color: #fff;
+        border: 1px solid transparent;
+
+        &:hover {
+            background-color: transparent;
+            color: $footer-blue;
+            border: 1px solid $footer-blue;
+        }
+    }
+
+    .__outlined {
+        color: $footer-blue;
+        border: 1px solid $footer-blue;
+
+        &:hover {
+            background-color: $footer-blue;
+            color: #fff;
+        }
+    }
+}
+
+section {
 
     p {
         color: $ash-grey;
@@ -106,6 +139,15 @@ section {
             background-color: $bg-grey;
             padding: 50px;
 
+            .checklist-forms {
+                label {
+                    font-family: 'Gotham Medium';
+                    font-size: 14px;
+                    line-height: 24px;
+                    color: $slate-grey;
+                }
+            }
+
             .details-title {
                 font-size: 32px;
                 line-height: 44px;
@@ -166,7 +208,6 @@ section {
         position: relative;
 
         &:after {
-            font-family: FontAwesome;
             content: url('/images/cheveron-right.svg');
             font-family: "fontawesome";
             max-width: 36px;
@@ -182,9 +223,9 @@ section {
 
 
         h3 {
+            font-family: 'Gotham Light';
             font-size: 32px;
             line-height: 44px;
-            font-weight: 100;
             margin-left: 15px;
         }
 
@@ -220,7 +261,8 @@ section {
                 font-size: 14px;
                 line-height: 24px;
                 margin-bottom: 10px;
-                font-weight: bold;
+                font-family: 'Gotham Bold';
+                color: $slate-grey;
                 position: relative;
 
                 &::after {
@@ -240,7 +282,7 @@ section {
 
             .s-head-text {
                 font-size: 20px;
-                font-weight: 500;
+                font-family: "Gotham Medium";
             }
 
             .s-description {

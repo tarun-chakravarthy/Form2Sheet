@@ -1,10 +1,48 @@
-section {
-  color: #454545;
-}
-section.s-wrapper {
+body {
   max-width: 1300px;
   width: 100%;
   margin: 0px auto;
+  font-family: "Gotham Book";
+}
+body h1, body h2, body h3 {
+  font-family: "Gotham Medium";
+}
+body p {
+  font-size: 16px;
+  line-height: 26px;
+}
+body .btn {
+  font-size: 14px;
+  line-height: 24px;
+  font-family: "Gotham Light";
+  border-radius: 0;
+}
+body .btn.__lg {
+  min-width: 310px;
+  height: 40px;
+  margin: 0 auto;
+}
+body .__primary {
+  background-color: #2F8EDE;
+  color: #fff;
+  border: 1px solid transparent;
+}
+body .__primary:hover {
+  background-color: transparent;
+  color: #2F8EDE;
+  border: 1px solid #2F8EDE;
+}
+body .__outlined {
+  color: #2F8EDE;
+  border: 1px solid #2F8EDE;
+}
+body .__outlined:hover {
+  background-color: #2F8EDE;
+  color: #fff;
+}
+
+section {
+  color: #454545;
 }
 section p {
   color: #6f7170;
@@ -83,6 +121,12 @@ section .lnv-services .partner-details {
   background-color: #f8f8f8;
   padding: 50px;
 }
+section .lnv-services .partner-details .checklist-forms label {
+  font-family: "Gotham Medium";
+  font-size: 14px;
+  line-height: 24px;
+  color: #454545;
+}
 section .lnv-services .partner-details .details-title {
   font-size: 32px;
   line-height: 44px;
@@ -133,7 +177,6 @@ section div.accordion {
   position: relative;
 }
 section div.accordion:after {
-  font-family: FontAwesome;
   content: url("/images/cheveron-right.svg");
   font-family: "fontawesome";
   max-width: 36px;
@@ -146,9 +189,9 @@ section div.accordion.is-open:after {
   transform: rotate(90deg);
 }
 section div.accordion h3 {
+  font-family: "Gotham Light";
   font-size: 32px;
   line-height: 44px;
-  font-weight: 100;
   margin-left: 15px;
 }
 section div.accordion .title-img {
@@ -177,7 +220,8 @@ section .accordion-content .checklist-forms label {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 10px;
-  font-weight: bold;
+  font-family: "Gotham Bold";
+  color: #454545;
   position: relative;
 }
 section .accordion-content .checklist-forms label::after {
@@ -194,10 +238,107 @@ section .accordion-content .checklist-forms .s-description {
 }
 section .accordion-content .checklist-forms .s-head-text {
   font-size: 20px;
-  font-weight: 500;
+  font-family: "Gotham Medium";
 }
 section .accordion-content .checklist-forms .s-description {
   font-size: 16px;
   font-weight: 300;
   line-height: 26px;
+}
+
+footer .contact-us {
+  width: 100%;
+  background-color: #2F8EDE;
+  text-align: center;
+  padding: 25px;
+  color: #fff;
+  text-transform: uppercase;
+}
+footer .contact-us p {
+  margin: 0;
+}
+footer .contact-us a {
+  text-decoration: none;
+  color: #fff;
+}
+footer .contact-us .contact-copy {
+  font-family: "Gotham Light";
+  margin-top: 5px;
+}
+footer .contact-us .call-us {
+  font-size: 20px;
+  font-family: "Gotham Bold";
+}
+footer .footer-content {
+  background-color: #EFEFEF;
+  padding: 25px;
+  text-align: left;
+}
+footer .footer-content .footer-imgs {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+footer .footer-content .footer-imgs .p-block {
+  margin-left: 10px;
+}
+footer .footer-content .footer-imgs .p-block P {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+footer .footer-content .footer-imgs .p-block .add-strong {
+  font-family: "Gotham Medium";
+}
+footer .footer-content .footer-text, footer .footer-content .copy-right {
+  font-size: 10px;
+  line-height: 16px;
+  color: #2F2924;
+}
+footer .footer-content .copy-right {
+  font-family: "Gotham Medium";
+}
+
+@font-face {
+  font-family: "Gotham Book";
+  src: url(/fonts/gotham-book-webfont.eot?b7e2ebe717937cb64369fc148ff9987e);
+  src: url(/fonts/gotham-book-webfont.eot?b7e2ebe717937cb64369fc148ff9987e?#iefix) format("embedded-opentype"), url(/fonts/gotham-book-webfont.woff2?5b778a1b21b7941d29e379f252a1ac56) format("woff2"), url(/fonts/gotham-book-webfont.woff?8893a1efd14802a01bc2aa8e4e16cdf8) format("woff"), url(/fonts/gotham-book-webfont.ttf?5a8be6dbe05d568aef2fe2358747a635) format("truetype"), url("/fonts/gotham-book-webfont.svg?e332d169347c17d358c934ee25ac22b8#Gotham Book") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gotham Bold";
+  src: url(/fonts/gotham-bold-webfont.eot?b3d7c04cc5e4f91ae5fd24a5c0e92114);
+  src: url(/fonts/gotham-bold-webfont.eot?b3d7c04cc5e4f91ae5fd24a5c0e92114?#iefix) format("embedded-opentype"), url(/fonts/gotham-bold-webfont.woff2?23b9f8cfcecf6b2a3785255be58a72fb) format("woff2"), url(/fonts/gotham-bold-webfont.woff?93eda14aee3c30e031be0d2219a2304d) format("woff"), url(/fonts/gotham-bold-webfont.ttf?df46158ef50abd9069c3b308d98941d4) format("truetype"), url(/fonts/gotham-bold-webfont.svg?a1bf8907df2ce370d548b462842e4ead#gotham_mediumregular) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gotham Medium";
+  src: url(/fonts/gotham-medium-webfont.eot?bb9899ce91187e133375a2485e935d2f);
+  src: url(/fonts/gotham-medium-webfont.eot?bb9899ce91187e133375a2485e935d2f?#iefix) format("embedded-opentype"), url(/fonts/gotham-medium-webfont.woff2?d404f8830a0b7543f6c1464241830844) format("woff2"), url(/fonts/gotham-medium-webfont.woff?04a64fcb838fa0475d2ca58fe973ea44) format("woff"), url(/fonts/gotham-medium-webfont.ttf?d9889c0e9254c6bfaff1db5de7d67274) format("truetype"), url(/fonts/gotham-medium-webfont.svg?64a14cd054c013fc44806b2a67e4cbc8#gotham_mediumregular) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gotham Light";
+  src: url(/fonts/gotham-light-webfont.eot?c4bb8d10d5b7b725ef840cb6d8264987);
+  src: url(/fonts/gotham-light-webfont.eot?c4bb8d10d5b7b725ef840cb6d8264987?#iefix) format("embedded-opentype"), url(/fonts/gotham-light-webfont.woff?364878554b059ab2e3d9c67a314bee72) format("woff"), url(/fonts/gotham-light-webfont.ttf?a856b275bc689ab8a18b1fa1ad8008d8) format("truetype"), url(/fonts/gotham-light-webfont.svg?326b68b2e73797b8050ca3c5258a011b#gotham_lightregular) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gotham Black";
+  src: url(/fonts/gotham-black-webfont.eot?b623109fb4ea8c2717aebfaaaff44093);
+  src: url(/fonts/gotham-black-webfont.eot?b623109fb4ea8c2717aebfaaaff44093?#iefix) format("embedded-opentype"), url(/fonts/gotham-black-webfont.woff2?086bf229a18c986a322f2a4adbd5f789) format("woff2"), url(/fonts/gotham-black-webfont.woff?29661315dd48a140ce8e11a8f67c5840) format("woff"), url(/fonts/gotham-black-webfont.ttf?0a053f16bf3b4c34cf3a9aaf75ef5c2a) format("truetype"), url(/fonts/gotham-black-webfont.svg?d9fd9258ccc70a8a74c6d5005fc3ad00#gotham_mediumregular) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "FontAwesome";
+  src: url(/fonts/fontawesome-webfont.eot?7f77840e46fa6103b49437d09c47e238);
+  src: url(/fonts/fontawesome-webfont.eot?7f77840e46fa6103b49437d09c47e238?#iefix&v=4.5.0) format("embedded-opentype"), url(/fonts/fontawesome-webfont.woff2?af6df524c7d052f637e367f67c880b46) format("woff2"), url(/fonts/fontawesome-webfont.woff?b09f4960e5ffa8e0ef9287b36aee4b2b) format("woff"), url(/fonts/fontawesome-webfont.ttf?bfcf94e00816b7cfccc70b1416457c8e) format("truetype"), url(/fonts/fontawesome-webfont.svg?85248e128ebce905c08aa6a2b785e4aa#fontawesomeregular) format("svg");
+  font-weight: normal;
+  font-style: normal;
 }

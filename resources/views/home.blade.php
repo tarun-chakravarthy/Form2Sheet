@@ -20,14 +20,17 @@
 
 <body>
     <section class="s-wrapper">
-        @yield('content')
+        @include('form')
     </section>
+
+    <footer>
+        @include('footer')
+    </footer>
 
 
     <script>
+
         const accordionBtns = document.querySelectorAll(".accordion");
-
-
         accordionBtns.forEach((accordion) => {
             accordion.onclick = function () {
                 this.classList.toggle("is-open");
