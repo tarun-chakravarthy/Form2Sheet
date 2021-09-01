@@ -1,13 +1,19 @@
 <html>
     <head>
-        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <title>Services and Opportunity Checklist</title>
-
         <style type="text/css" media="all">
-            body {
-                font-family: 'Nunito', sans-serif;
+
+            @font-face {
+                font-family: "GothamM";
+                src: url("{{ storage_path('fonts/gotham-medium-webfont.ttf') }}") format('truetype');
+            }
+        body {
                 color: #384047;
                 text-transform: capitalize;
+                font-family: 'Nunito', sans-serif;
             }
             table {
                 min-width: 100%;
@@ -28,10 +34,18 @@
             tr {
                 background: #f4f7f8;
                 border-bottom: 1px solid #FFF;
-                margin-bottom: 5px;
             }
             tr:nth-child(even) {
                 background: #e8eeef;
+            }
+
+            tbody {
+                font-family: 'Nunito', sans-serif;
+            }
+
+            tbody th,
+            tbody td, {
+                font-family: 'Nunito', sans-serif;
             }
 
             th, td {
@@ -54,13 +68,15 @@
             tfoot td {
                 padding: 10px 2px;
                 font-size: 0.8em;
-                font-style: italic;
                 color: #a1d1f3;
             }
         </style>
     </head>
 
     <body>
+        <div style="min-width: 40px; min-height: 120px; text-align:right;">
+            <img src="{{ public_path('images/lenovo-logo.jpeg') }}" style="width: 40px; height: 120px;">
+        </div>
         {{-- Lenovo Services Opportunity Checklist --}}
         <div>
             <table>

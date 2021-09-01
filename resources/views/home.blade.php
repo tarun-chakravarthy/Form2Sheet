@@ -12,6 +12,7 @@
     <!-- Jquery -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 
+
     <!--FONT AWESOME-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -27,8 +28,7 @@
         @include('footer')
     </footer>
 
-
-    <script>
+    <script type="text/javascript">
 
         const accordionBtns = document.querySelectorAll(".accordion");
         accordionBtns.forEach((accordion) => {

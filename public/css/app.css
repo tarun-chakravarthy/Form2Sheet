@@ -57,11 +57,19 @@ section hr {
   }
 }
 section .add-padding {
-  padding: 50px;
+  padding: 50px 0 0;
 }
 @media only screen and (max-width: 768px) {
   section .add-padding {
-    padding: 0;
+    padding: 0 0 20px;
+  }
+}
+section .btn-margin {
+  margin: 50px 0;
+}
+@media only screen and (max-width: 768px) {
+  section .btn-margin {
+    margin: 20px auto;
   }
 }
 section .bg-blue {
@@ -87,7 +95,7 @@ section .lnv-services .hero-banner {
 }
 section .lnv-services .hero-banner img {
   width: 100%;
-  height: 400px;
+  height: 500px;
 }
 section .lnv-services .hero-banner .mb-img {
   display: none;
@@ -224,13 +232,31 @@ section .accordion-content .checklist-forms label {
   color: #454545;
   position: relative;
 }
-section .accordion-content .checklist-forms label::after {
-  content: url("/images/Info.svg");
-  width: 16px;
+section .accordion-content .checklist-forms label .icon {
   height: 16px;
+  width: 16px;
+  margin-right: 10px;
+}
+section .accordion-content .checklist-forms .tool-tip {
   position: absolute;
-  right: -20px;
-  top: 2px;
+  content: attr(data-tooltip);
+  opacity: 0;
+  margin: 0;
+  left: 17px;
+  width: 365px;
+  top: -61px;
+  border: 1px solid #6f7170;
+  background-color: #F2FAFF;
+  border-radius: 4px;
+  padding: 10px;
+  z-index: 1;
+  font-family: "Gotham Medium";
+  font-size: 14px;
+  line-height: 22px;
+  text-transform: initial;
+}
+section .accordion-content .checklist-forms .icon:hover .tool-tip {
+  opacity: 1;
 }
 section .accordion-content .checklist-forms .s-head-text,
 section .accordion-content .checklist-forms .s-description {
@@ -242,7 +268,7 @@ section .accordion-content .checklist-forms .s-head-text {
 }
 section .accordion-content .checklist-forms .s-description {
   font-size: 16px;
-  font-weight: 300;
+  font-family: "Gotham Light";
   line-height: 26px;
 }
 

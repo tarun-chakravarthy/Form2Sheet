@@ -69,10 +69,18 @@ section {
     }
 
     .add-padding {
-        padding: 50px;
+        padding: 50px 0 0;
 
         @media only screen and (max-width: 768px) {
-            padding: 0;
+            padding: 0 0 20px;
+        }
+    }
+
+    .btn-margin {
+        margin: 50px 0;
+
+        @media only screen and (max-width: 768px) {
+            margin: 20px auto;
         }
     }
 
@@ -100,7 +108,7 @@ section {
             position: relative;
             img {
                 width: 100%;
-                height: 400px;
+                height: 500px;
             }
             .mb-img {
                 display: none;
@@ -261,20 +269,49 @@ section {
                 font-size: 14px;
                 line-height: 24px;
                 margin-bottom: 10px;
+
                 font-family: 'Gotham Bold';
                 color: $slate-grey;
                 position: relative;
 
-                &::after {
-                    content: url("/images/Info.svg");
-                    width: 16px;
+                .icon {
+                    // content: url("/images/Info.svg");
+                    // width: 16px;
+                    // height: 16px;
+                    // position: absolute;
+                    // left: -20px;
+                    // top: 2px;
+
                     height: 16px;
-                    position: absolute;
-                    right: -20px;
-                    top: 2px;
+                    width: 16px;
+                    margin-right: 10px;
                 }
             }
 
+            .tool-tip {
+                position: absolute;
+                content: attr(data-tooltip);
+                opacity: 0;
+                margin: 0;
+                left: 17px;
+                width: 365px;
+                top: -61px;
+                border: 1px solid $ash-grey;
+                background-color: #F2FAFF;
+                border-radius: 4px;
+                padding: 10px;
+                z-index: 1;
+                font-family: "Gotham Medium";
+                font-size: 14px;
+                line-height: 22px;
+                text-transform: initial;
+            }
+
+            .icon:hover {
+                .tool-tip {
+                    opacity : 1;
+                }
+            }
             .s-head-text,
             .s-description {
                 color: $slate-grey;
@@ -287,7 +324,7 @@ section {
 
             .s-description {
                 font-size: 16px;
-                font-weight: 300;
+                font-family: 'Gotham Light';
                 line-height: 26px;
             }
         }
