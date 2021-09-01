@@ -255,6 +255,11 @@ section .accordion-content .checklist-forms .tool-tip {
   line-height: 22px;
   text-transform: initial;
 }
+@media only screen and (max-width: 768px) {
+  section .accordion-content .checklist-forms .tool-tip {
+    width: unset;
+  }
+}
 section .accordion-content .checklist-forms .icon:hover .tool-tip {
   opacity: 1;
 }
