@@ -109,20 +109,33 @@ class PdfController extends Controller
             return $pdf->download('exported_checklist.pdf');
 
         } elseif ($request->export == "export") {
-            // dd($request->all());
 
-            Excel::create('New file', function($excel) {
+            $headers = array(
+                "Content-type" => "text/csv",
+                "Content-Disposition" => "attachment; filename=file.csv",
+                "Pragma" => "no-cache",
+                "Cache-Control" => "must-revalidate, post-check=0, pre-check=0",
+                "Expires" => "0"
+            );
 
-                $excel->sheet('New sheet', function($sheet) {
+            $userInfo = array($exportData['speakingTo'] ?? '', $exportData['partnerName'] ?? '', $exportData['lnvRep'] ?? '');
+            $columns = array('EXISTING PARTNER OFFERING', 'AUGMENTED PARTNERSHIP WITH LENOVO', 'KEEN TO Learn More');
 
-                    $sheet->loadView('folder.view');
+            $callback = function() use ($exportData, $columns, $userInfo)
+            {
+                $file = fopen('php://output', 'w');
+                fputcsv($file, $userInfo);
+                fputcsv($file, []);
+                fputcsv($file, $columns);
 
-                });
+                fputcsv($file, array($exportData['partnerOffering'] ?? '', $exportData['augmentedPartner'] ?? '' ,$exportData['learnMore'] ?? ''));
+                for ($i=1; $i <= 23; $i++) {
+                     fputcsv($file, array($exportData['partnerOffering'.$i] ?? '', $exportData['augmentedPartner'.$i] ?? '' ,$exportData['learnMore'.$i] ?? ''));
+                }
 
-                return $excel->download($exportData, 'exported_checklist.xlsx');
-
-            });
-
-        }
+                fclose($file);
+            };
+            return \Response::stream($callback, 200, $headers);
+            }
     }
 }
