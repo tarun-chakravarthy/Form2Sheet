@@ -8,7 +8,7 @@ node_modules/
 dist/
 
 # Larvael
-vendor/
+/vendor
 .env
 
 # Compiled Java class files
