@@ -207,9 +207,10 @@ section div.accordion .title-img {
   float: left;
 }
 @media only screen and (max-width: 768px) {
-  section div.accordion {
+  section div.accordion h3 {
     font-size: 22px;
     line-height: 28px;
+    margin-right: 25px;
   }
 }
 section .accordion-content {
@@ -257,7 +258,11 @@ section .accordion-content .checklist-forms .tool-tip {
 }
 @media only screen and (max-width: 768px) {
   section .accordion-content .checklist-forms .tool-tip {
-    width: unset;
+    width: 300px;
+    font-size: 10px;
+    line-height: 16px;
+    top: -25px;
+    padding: 5px;
   }
 }
 section .accordion-content .checklist-forms .icon:hover .tool-tip {
