@@ -112,15 +112,15 @@
                 <tbody>
                     <tr>
                         <th>Existing Partner Offering</th>
-                        <td>{{ $partnerOffering }}</td>
+                        <td>{{ $partnerOffering0 }}</td>
                     </tr>
                     <tr>
                         <th>Augmented Partnership With Lenovo</th>
-                        <td>{{ $augmentedPartner }}</td>
+                        <td>{{ $augmentedPartner0 }}</td>
                     </tr>
                     <tr>
                         <th>Keen To Learn More!</th>
-                        <td>{{ $learnMore }}</td>
+                        <td>{{ $learnMore0 }}</td>
                     </tr>
                 </tbody>
             </table>

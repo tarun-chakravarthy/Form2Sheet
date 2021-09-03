@@ -65,7 +65,7 @@
                     </div>
                     <div class="col-md-4">
                         <label for="partnerOffering"> <span class="icon"> <p class="tool-tip">Is this is an offering which the business partner is capable of delivering to their customer?</p><img src="/images/Info.svg" alt=""></span>Existing Partner Offering</label>
-                        <select name="partnerOffering" id="partnerOffering">
+                        <select name="partnerOffering0" id="partnerOffering">
                             <optgroup label="Service Options">
                                 <option slected="selected">Please select</option>
                                 <option value="Yes">Yes</option>
@@ -74,8 +74,8 @@
                         </select>
                     </div>
                     <div class="col-md-4">
-                        <label for="augmentedPartner" > <span class="icon"> <p class="tool-tip">Regardless of the answer to the first question, is the business partner interested in reselling Lenovo's offering?</p><img src="/images/Info.svg" alt=""></span>Augmented partnership with Lenovo</label>
-                        <select name="augmentedPartner" id="augmentedPartner">
+                        <label for="augmentedPartner0" > <span class="icon"> <p class="tool-tip">Regardless of the answer to the first question, is the business partner interested in reselling Lenovo's offering?</p><img src="/images/Info.svg" alt=""></span>Augmented partnership with Lenovo</label>
+                        <select name="augmentedPartner0" id="augmentedPartner">
                             <optgroup label="Service Options">
                                 <option slected="selected">Please select</option>
                                 <option value="Yes">Yes</option>
@@ -85,7 +85,7 @@
                     </div>
                     <div class="col-md-4">
                         <label for="learnMore"> <span class="icon"> <p class="tool-tip">Regardless of the answers to the first two questions, is the business partner interested in learning more about Lenovo's offering?</p><img src="/images/Info.svg" alt=""></span>Keen to learn more!</label>
-                        <select name="learnMore" id="learnMore">
+                        <select name="learnMore0" id="learnMore">
                             <optgroup label="Service Options">
                                 <option slected="selected">Please select</option>
                                 <option value="Yes">Yes</option>

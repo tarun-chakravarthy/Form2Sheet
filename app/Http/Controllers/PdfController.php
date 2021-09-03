@@ -27,9 +27,9 @@ class PdfController extends Controller
             'speakingTo' => $request->input('speakingTo'),
             'partnerName' => $request->input('partnerName'),
             'lnvRep' => $request->input('lnvRep'),
-            'partnerOffering' => $request->input('partnerOffering'),
-            'augmentedPartner' => $request->input('augmentedPartner'),
-            'learnMore' => $request->input('learnMore'),
+            'partnerOffering0' => $request->input('partnerOffering0'),
+            'augmentedPartner0' => $request->input('augmentedPartner0'),
+            'learnMore0' => $request->input('learnMore0'),
             'partnerOffering1' => $request->input('partnerOffering1'),
             'augmentedPartner1' => $request->input('augmentedPartner1'),
             'learnMore1' => $request->input('learnMore1'),
@@ -112,25 +112,53 @@ class PdfController extends Controller
 
             $headers = array(
                 "Content-type" => "text/csv",
-                "Content-Disposition" => "attachment; filename=file.csv",
+                "Content-Disposition" => "attachment; filename=exported_checklist.csv",
                 "Pragma" => "no-cache",
                 "Cache-Control" => "must-revalidate, post-check=0, pre-check=0",
                 "Expires" => "0"
             );
 
             $userInfo = array($exportData['speakingTo'] ?? '', $exportData['partnerName'] ?? '', $exportData['lnvRep'] ?? '');
-            $columns = array('EXISTING PARTNER OFFERING', 'AUGMENTED PARTNERSHIP WITH LENOVO', 'KEEN TO Learn More');
+            $headings = array('Speaking To', 'Partner Name', 'Lenovo REP');
+            $columns = array('','EXISTING PARTNER OFFERING', 'AUGMENTED PARTNERSHIP WITH LENOVO', 'KEEN TO LEARN MORE');
+            $row = [
+                'Whiteboard Session & Refresh Planning',
+                'Migration Services',
+                'Persona Modelling (User Grouping)',
+                'Imaging',
+                'Custom BIOS Settings',
+                'MS Autopilot',
+                'Device Deployment',
+                'Data Migration',
+                'Drop in the Box',
+                'Warranty Support (Premier Support)',
+                'Accidental Damage Protection',
+                'Sealed Battery',
+                'Keep Your Drive',
+                'CSP & SW Licensing',
+                'Image Management',
+                'Asset Inventory and Management',
+                'Compliance',
+                'TCO Management',
+                'Security Management',
+                'Lenovo Co2 Offset Services',
+                'Packaging and Collection',
+                'Logistics (Collection and inspection)',
+                'Data Wipe',
+                'Recycling/Disposal/Resale'
+            ];
 
-            $callback = function() use ($exportData, $columns, $userInfo)
+            $callback = function() use ($exportData, $headings, $row, $columns, $userInfo)
             {
                 $file = fopen('php://output', 'w');
+                fputcsv($file, $headings);
                 fputcsv($file, $userInfo);
                 fputcsv($file, []);
                 fputcsv($file, $columns);
+                // fputcsv($file, array($exportData['partnerOffering'] ?? '', $exportData['augmentedPartner'] ?? '' ,$exportData['learnMore'] ?? ''));
 
-                fputcsv($file, array($exportData['partnerOffering'] ?? '', $exportData['augmentedPartner'] ?? '' ,$exportData['learnMore'] ?? ''));
-                for ($i=1; $i <= 23; $i++) {
-                     fputcsv($file, array($exportData['partnerOffering'.$i] ?? '', $exportData['augmentedPartner'.$i] ?? '' ,$exportData['learnMore'.$i] ?? ''));
+                for ($i=0; $i <= 23; $i++) {
+                    fputcsv($file, array($row[$i] ,$exportData['partnerOffering'.$i] ?? '', $exportData['augmentedPartner'.$i] ?? '' ,$exportData['learnMore'.$i] ?? ''));
                 }
 
                 fclose($file);
