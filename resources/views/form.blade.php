@@ -12,12 +12,9 @@
 
     <!-- REP details -->
     <div class="partner-details add-grey">
-        <h3 class="details-title">Lorem ipsum</h3>
+        {{-- <h3 class="details-title">Lorem ipsum</h3> --}}
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus
-            facere porro ab dolor fugiat doloremque iure, architecto expedita et
-            tempore doloribus fugit officia, soluta libero, odit delectus
-            necessitatibus recusandae ea!
+            We are substantially investing in channel to maintain our market leadership, by enabling our business partners to do more business and help them lead the intelligent transformation vision of Lenovo. As a valued partner, we invite you to complete the following survey so that we may understand where our combined services capabilities can further support you throughout the entire device lifecycle.
         </p>
         <hr />
 
