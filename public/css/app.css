@@ -95,7 +95,6 @@ section .lnv-services .hero-banner {
 }
 section .lnv-services .hero-banner img {
   width: 100%;
-  height: 500px;
 }
 section .lnv-services .hero-banner .mb-img {
   display: none;
@@ -306,9 +305,12 @@ footer .contact-us .call-us {
   font-family: "Gotham Bold";
 }
 footer .footer-content {
-  background-color: #EFEFEF;
+  background-color: #f2faff;
   padding: 25px;
-  text-align: left;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 footer .footer-content .footer-imgs {
   width: 100%;
@@ -334,6 +336,8 @@ footer .footer-content .footer-text, footer .footer-content .copy-right {
 }
 footer .footer-content .copy-right {
   font-family: "Gotham Medium";
+  text-align: center;
+  font-size: 16px;
 }
 
 @font-face {

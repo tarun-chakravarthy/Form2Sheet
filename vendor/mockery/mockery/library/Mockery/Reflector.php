@@ -1,22 +1,11 @@
 <?php
 
 /**
- * Mockery
+ * Mockery (https://docs.mockery.io/)
  *
- * LICENSE
- *
- * This source file is subject to the new BSD license that is bundled
- * with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * http://github.com/padraic/mockery/blob/master/LICENSE
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to padraic@php.net so we can send you a copy immediately.
- *
- * @category   Mockery
- * @package    Mockery
- * @copyright  Copyright (c) 2017 Dave Marshall https://github.com/davedevelopment
- * @license    http://github.com/padraic/mockery/blob/master/LICENSE New BSD License
+ * @copyright https://github.com/mockery/mockery/blob/HEAD/COPYRIGHT.md
+ * @license   https://github.com/mockery/mockery/blob/HEAD/LICENSE BSD 3-Clause License
+ * @link      https://github.com/mockery/mockery for the canonical source repository
  */
 
 namespace Mockery;
@@ -71,15 +60,55 @@ class Reflector
      */
     public static function getReturnType(\ReflectionMethod $method, $withoutNullable = false)
     {
-        if (!$method->hasReturnType()) {
+        $type = $method->getReturnType();
+
+        if (is_null($type) && method_exists($method, 'getTentativeReturnType')) {
+            $type = $method->getTentativeReturnType();
+        }
+
+        if (is_null($type)) {
             return null;
         }
 
-        $type = $method->getReturnType();
-        $declaringClass = $method->getDeclaringClass();
-        $typeHint = self::typeToString($type, $declaringClass);
+        $typeHint = self::typeToString($type, $method->getDeclaringClass());
 
         return (!$withoutNullable && $type->allowsNull()) ? self::formatNullableType($typeHint) : $typeHint;
+    }
+
+    /**
+     * Compute the string representation for the simplest return type.
+     *
+     * @param \ReflectionParameter $param
+     *
+     * @return string|null
+     */
+    public static function getSimplestReturnType(\ReflectionMethod $method)
+    {
+        $type = $method->getReturnType();
+
+        if (is_null($type) && method_exists($method, 'getTentativeReturnType')) {
+            $type = $method->getTentativeReturnType();
+        }
+
+        if (is_null($type) || $type->allowsNull()) {
+            return null;
+        }
+
+        $typeInformation = self::getTypeInformation($type, $method->getDeclaringClass());
+
+        // return the first primitive type hint
+        foreach ($typeInformation as $info) {
+            if ($info['isPrimitive']) {
+                return $info['typeHint'];
+            }
+        }
+
+        // if no primitive type, return the first type
+        foreach ($typeInformation as $info) {
+            return $info['typeHint'];
+        }
+
+        return null;
     }
 
     /**
@@ -92,21 +121,60 @@ class Reflector
      */
     private static function typeToString(\ReflectionType $type, \ReflectionClass $declaringClass)
     {
-        // PHP 8 union types can be recursively processed
-        if ($type instanceof \ReflectionUnionType) {
-            return \implode('|', \array_filter(\array_map(function (\ReflectionType $type) use ($declaringClass) {
-                $typeHint = self::typeToString($type, $declaringClass);
+        $char = $type instanceof \ReflectionIntersectionType ? "&" : "|";
+        return \implode($char, \array_map(function (array $typeInformation) {
+            return $typeInformation['typeHint'];
+        }, self::getTypeInformation($type, $declaringClass)));
+    }
 
-                return $typeHint === 'null' ? null : $typeHint;
-            }, $type->getTypes())));
+    /**
+     * Get the string representation of the given type.
+     *
+     * @param \ReflectionType  $type
+     * @param \ReflectionClass $declaringClass
+     *
+     * @return list<array{typeHint: string, isPrimitive: bool}>
+     */
+    private static function getTypeInformation(\ReflectionType $type, \ReflectionClass $declaringClass)
+    {
+        // PHP 8 union types and PHP 8.1 intersection types can be recursively processed
+        if ($type instanceof \ReflectionUnionType || $type instanceof \ReflectionIntersectionType) {
+            $types = [];
+
+            foreach ($type->getTypes() as $innterType) {
+                foreach (self::getTypeInformation($innterType, $declaringClass) as $info) {
+                    if ($info['typeHint'] === 'null' && $info['isPrimitive']) {
+                        continue;
+                    }
+
+                    $types[] = $info;
+                }
+            }
+
+            return $types;
         }
 
         // $type must be an instance of \ReflectionNamedType
         $typeHint = $type->getName();
 
-        // builtins and 'static' can be returned as is
-        if (($type->isBuiltin() || $typeHint === 'static')) {
-            return $typeHint;
+        // builtins can be returned as is
+        if ($type->isBuiltin()) {
+            return [
+                [
+                    'typeHint' => $typeHint,
+                    'isPrimitive' => in_array($typeHint, ['array', 'bool', 'int', 'float', 'null', 'object', 'string']),
+                ],
+            ];
+        }
+
+        // 'static' can be returned as is
+        if ($typeHint === 'static') {
+            return [
+                [
+                    'typeHint' => $typeHint,
+                    'isPrimitive' => false,
+                ],
+            ];
         }
 
         // 'self' needs to be resolved to the name of the declaring class
@@ -120,13 +188,16 @@ class Reflector
         }
 
         // class names need prefixing with a slash
-        return sprintf('\\%s', $typeHint);
+        return [
+            [
+                'typeHint' => sprintf('\\%s', $typeHint),
+                'isPrimitive' => false,
+            ],
+        ];
     }
 
     /**
      * Format the given type as a nullable type.
-     *
-     * This method MUST only be called on PHP 7.1+.
      *
      * @param string $typeHint
      *
@@ -138,6 +209,10 @@ class Reflector
             return sprintf('?%s', $typeHint);
         }
 
-        return $typeHint === 'mixed' ? 'mixed' : sprintf('%s|null', $typeHint);
+        if ($typeHint === 'null' || $typeHint === 'mixed') {
+            return $typeHint;
+        }
+
+        return sprintf('%s|null', $typeHint);
     }
 }

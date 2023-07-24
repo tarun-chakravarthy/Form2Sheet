@@ -28,9 +28,13 @@ footer {
     }
 
     .footer-content {
-        background-color: $footer-grey;
+        background-color: $peach-blue;
         padding: 25px;
-        text-align: left;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
 
         .footer-imgs {
             width: 100%;
@@ -62,6 +66,8 @@ footer {
 
         .copy-right {
             font-family: 'Gotham Medium';
+            text-align: center;
+            font-size: 16px;
         }
     }
 }

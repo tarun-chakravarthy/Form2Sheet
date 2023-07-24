@@ -74,13 +74,14 @@
     </head>
 
     <body>
-        <div style="min-width: 40px; min-height: 120px; text-align:right;">
+        {{-- Add client's Logo --}}
+        {{-- <div style="min-width: 40px; min-height: 120px; text-align:right;">
             <img src="{{ public_path('images/lenovo-logo.jpeg') }}" style="width: 40px; height: 120px;">
-        </div>
-        {{-- Lenovo Services Opportunity Checklist --}}
+        </div> --}}
+        {{-- Client Services Opportunity Checklist --}}
         <div>
             <table>
-                <caption>Lenovo Services Opportunity Checklist</caption>
+                <caption>Client Services Opportunity Checklist</caption>
                 <tbody>
                     <tr>
                         <th>Who are you speaking to</th>
@@ -91,7 +92,7 @@
                         <td>{{ $partnerName }}</td>
                     </tr>
                     <tr>
-                        <th>Lenovo REP</th>
+                        <th>Client REP</th>
                         <td>{{ $lnvRep }}</td>
                     </tr>
                 </tbody>
@@ -567,7 +568,7 @@
                 <thead>
                     <tr>
                         <th>
-                            Lenovo Co2 Offset Services
+                            Client Co2 Offset Services
                         </th>
                     </tr>
                 </thead>
